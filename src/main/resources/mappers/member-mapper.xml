@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 
+  1. namespace 는 Dao 인터페이스로 설정해야 한다.
+  2. id는 Service 의 메소드 이름으로 매핑된다. 
+  3. parameterType 은 VO 로 지정한다.
+ -->
+<mapper namespace="com.maju.k.member.MemberDao">
+
+<select id="memberList" resultType="com.maju.k.member.MemberVO">
+<![CDATA[
+    select username, name, role, enabled
+    from member0207
+	]]> 
+</select>
+
+<select id="login" resultType="com.maju.k.member.MemberVO">
+<![CDATA[
+    select *
+    from member0207  where username = #{username}
+	]]> 
+</select>
+
+
+
+</mapper>

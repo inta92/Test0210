@@ -1,0 +1,32 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<link th:href="@{../css/style.css}" rel=stylesheet />
+<head>
+
+</head>
+<body>
+<div id=body>    
+<header>
+<img align="center" th:src="@{../img/개구리.png}" width="40" height="40" /> &emsp;&emsp;
+학생 성적처리 프로그램 Ver.1.11
+&emsp;&emsp;<img align="center" th:src="@{../img/개구리.png}" width="40" height="40" />
+</header>
+<nav>
+&emsp;&emsp;<a href="/board/insert.do">게시판글쓰기</a>
+&emsp;&emsp;<a href="/board/getSelectAll.do">게시판목록보기/수정</a>
+&emsp;&emsp;<a href="/exam/examInsert.do">성적입력</a>
+&emsp;&emsp;<a href="/exam/examSelectAll.do">성적보기/수정</a>
+&emsp;&emsp;<a href="/uni/uniInsert.do">univer 입력</a>
+&emsp;&emsp;<a href="/uni/select.do">univer 성적보기/수정</a>
+
+&emsp;&emsp;&emsp;&emsp;<a href="/member/memberList.do">회원목록</a>
+&emsp;&emsp;<a href="/member/login.do">로그인</a>
+
+
+&emsp;&emsp;&emsp;<a href="/index.do">홈으로</a>
+
+&emsp;&emsp;<a href="/member/logout.do">로그아웃</a>
+
+
+
+</nav>

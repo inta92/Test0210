@@ -1,0 +1,26 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<div th:replace="/include/top"></div>
+
+<section>
+<br>
+<div align="center">
+ <h1> 학생성적 수정하기  </h1>
+ <hr width=80%>
+
+ <form name="f1" th:action="@{/uni/updateOK.do}"  method=post  >
+ <table border=1 width="300">
+ <tr> <td width=70 align="center"> 학번 </td>
+      <td>&emsp;<input type=text name=sno th:value="${m.sno}" readonly > </td> </tr>
+ <tr> <td align="center"> 이 름 </td> <td>&emsp;<input type=text name=sname th:value="${m.sname}" > </td> </tr>
+ <tr> <td align="center"> 학 년 </td> <td>&emsp;<input type=text name=year th:value="${m.year}"  > </td> </tr>
+ <tr> <td align="center"> 전 공 </td> <td>&emsp;<input type=text name=sdept th:value="${m.sdept}"  > </td> </tr>
+ <tr> <td colspan=2  align="center"> <input type=submit value="성적수정" > </td>  </tr>
+ 
+ </table>
+ </form>
+ <hr width=80%>
+</div>
+<br>
+</section>
+<div th:replace="/include/bottom::footer"></div>

@@ -1,0 +1,38 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<div th:replace="/include/top"></div>
+
+<section>
+<br><br>
+<div align=center> 
+  <h2> 학생 성적 목록 보기  </h2>
+<table border=1  width=700>
+<tr>
+  <th> 학번 </th> <th> 이름 </th> <th> 국어 </th> <th> 영어 </th>
+  <th> 수학 </th> <th> 역사 </th><th> 합계 </th><th> 평균1 </th><th> 평균2 </th>
+</tr>
+
+<tr  align="center"   th:each=" m : ${li} ">
+ <td th:text="${m.sno}" />  
+ <td >
+ 	 <a th:href="@{/exam/examEdit.do(sno=${m.sno})}" 
+    	th:text="${m.sname}">
+ 	 </a>
+ </td>
+   
+ <td th:text="${m.kor}" />  
+ <td th:text="${m.eng}" /> 
+ <td th:text="${m.math}" />  
+ <td th:text="${m.hist}" /> 
+ <td th:text="${m.kor+m.eng+m.math+m.hist}" /> 
+ <td > [[${(m.kor+m.eng+m.math+m.hist)/4.0}]] </td>
+ <!-- formatDecimal(값 , 정수최소자리, 실수 자릿수 )  -->
+ <td > [[${#numbers.formatDecimal((m.kor+m.eng+m.math+m.hist)/4.0,1,1)}]] </td>
+</tr>
+
+</table>
+
+</div>
+<br>
+</section>
+<div th:replace="/include/bottom::footer"></div>

@@ -1,0 +1,28 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<div th:replace="/include/top"></div>
+
+<section>
+<br>
+<div align="center">
+ <h1> 학생성적 입력  </h1>
+ <hr width=80%>
+
+ <form name="f1" th:action="@{/exam/examInsertOK.do}"  method=post  >
+ <table border=1 width="300">
+ <tr> <td width=70 align="center"> 학번 </td> 
+<td>&emsp;<input type=number min=10000  max=99999 name=sno > </td> </tr>
+ <tr> <td align="center"> 이 름 </td> <td>&emsp;<input type=text name=sname > </td> </tr>
+ <tr> <td align="center"> 국 어 </td> <td>&emsp;<input type=number min=0  max=100 name=kor > </td> </tr>
+ <tr> <td align="center"> 영 어 </td> <td>&emsp;<input type=number min=0  max=100 name=eng > </td> </tr>
+ <tr> <td align="center"> 수 학 </td> <td>&emsp;<input type=number min=0  max=100 name=math > </td> </tr>
+ <tr> <td align="center"> 역 사 </td> <td>&emsp;<input type=number min=0  max=100 name=hist > </td> </tr>
+ <tr> <td colspan=2  align="center"> <input type=submit value="성적등록" > </td>  </tr>
+ 
+ </table>
+ </form>
+ <hr width=80%>
+</div>
+<br>
+</section>
+<div th:replace="/include/bottom::footer"></div>

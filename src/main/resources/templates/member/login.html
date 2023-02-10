@@ -1,0 +1,46 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<div th:replace="/include/top"></div>
+ <section>
+<br><br><br><br> 
+<div align=center> 
+
+<h1> 쇼핑몰 로그인  </h1>
+
+<!-- 
+   method는 post 로 잡고 action 은 잡지않는다.
+   자동으로  SecurityUserDetailsService 와 SecurityUser 넘어가 매핑된다. 
+ -->
+<form method=post>
+<table border=1  width=300  height=100>
+
+<tr align="center"><td>회원아이디</td> 
+<td> 
+
+ <!-- username 은 Spring security 의 고정된 값.    -->
+ <input  type=text  name=username />
+</td> </tr>
+
+<tr align="center"><td>회원암호</td>
+<td> 
+ <input  type=text  name=password />
+</td> </tr>
+
+<tr  align="center">
+ <td colspan=2><input  type=submit value="회원 로그인"></td>
+</tr>
+
+</table>
+</form>
+</div>
+</section>
+<div th:replace="/include/bottom::footer"></div>
+
+</body>
+</html>
+</body>
+</html>

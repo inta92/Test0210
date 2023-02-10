@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 
+  1. namespace 는 Dao 인터페이스로 설정해야 한다.
+  2. id는 Service 의 메소드 이름으로 매핑된다. 
+  3. parameterType 은 VO 로 지정한다.
+ -->
+<mapper namespace="com.maju.k.exam.ExamDao">
+
+<select id="examSelectAll" resultType="com.maju.k.exam.ExamVO">
+<![CDATA[
+    select sno, sname, kor, eng, math, hist
+    from examtbl7
+	]]> 
+</select>
+
+<insert id="insert" parameterType="com.maju.k.exam.ExamVO"  >
+  insert into examtbl7(sno, sname, kor, eng, math, hist) 
+  values(#{sno}, #{sname}, #{kor}, #{eng}, #{math}, #{hist})
+</insert>
+
+<update id="update" parameterType="com.maju.k.exam.ExamVO"  >
+  update  examtbl7 set sname=#{sname}, kor=#{kor}, eng=#{eng}, 
+          math=#{math}, hist=#{hist}
+  where sno=#{sno}   
+</update>
+
+<delete id="delete" parameterType="com.maju.k.exam.ExamVO"  >
+  delete from examtbl7  where sno=#{sno}   
+</delete>
+
+
+
+</mapper>

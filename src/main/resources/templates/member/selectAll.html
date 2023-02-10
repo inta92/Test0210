@@ -1,0 +1,27 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<div th:replace="/include/top"></div>
+
+<section>
+<br><br>
+<div align=center> 
+  <h2> 학생 성적 목록 보기  </h2>
+<table border=1  width=700>
+<tr>
+  <th> 아이디 </th> <th> 이름 </th> <th> 권한 </th> <th> 사용여부 </th>
+</tr>
+
+<tr  align="center"   th:each=" m : ${li} ">
+ <td th:text="${m.username}" />  
+ <td th:text="${m.name}" />
+ <td th:text="${m.role}" /> 
+ <td th:text="${m.enabled}" />  
+
+</tr>
+
+</table>
+
+</div>
+<br>
+</section>
+<div th:replace="/include/bottom::footer"></div>
